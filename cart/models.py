@@ -1,8 +1,12 @@
 from django.db import models
+from inventory.models import Product
+
 
 # Create your models here.
 
 class Cart(models.Model):
+
+    inventory = models.ManyToManyField(Product)
     delivery_choices = (
         ('Pick-Up Point', 'Pick-Up Point'),
         ('Home Delivery', 'Home Delivery'),
@@ -19,4 +23,5 @@ class Cart(models.Model):
     payment_method = models.CharField(max_length = 15, choices = payment_choice)
     
     def __str__(self):
-        return self.delivery_options
+        # return self.inventory
+        return f"Cart #{self.pk}"

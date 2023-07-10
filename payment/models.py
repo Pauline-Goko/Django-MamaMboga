@@ -16,6 +16,7 @@ class Payment(models.Model):
     status = models.CharField(max_length=15)
     reference_number = models.CharField(max_length=32)
     products= models.CharField(max_length=64)
+    refunds = models.CharField(max_length=500)
     
     def __str__(self):
         return self.payment_method
