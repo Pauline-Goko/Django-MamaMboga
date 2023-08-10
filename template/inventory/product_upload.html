@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Product Upload</h3>
+     <form  method = "POST", class = "upload-form" enctype="multipart/form-data">
+         {%csrf_token%}   <!--deployement of form for security> -->
+        {{form.as_p}}
+        
+        <button type="submit">Save</button>
+        
+       <!-- the button triggers the request to post -->
+
+    </form>
+    
+</body>
+</html>

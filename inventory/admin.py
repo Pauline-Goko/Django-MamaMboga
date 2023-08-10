@@ -6,6 +6,6 @@ from.models import Product
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ("name", "stock", "price","date_created")
+    list_display = ("title","product_id", "stock", "price","date_created")
     
 admin.site.register(Product, ProductAdmin)

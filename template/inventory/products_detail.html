@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/products_detail.css' %}">
+</head>
+<body>
+
+<div class="description">
+    <h4>{{products.title}}</h4>
+    <img src="{{ product.image.url }}"/>
+    <p>{{products.description}} </p>
+    <span> {{products.price}} </span>
+    <button><a href="{% url 'products_list_view' %}"></a>Add to cart</button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/products_list.css' %}">
+
+</head>
+<body>
+  <h3>Shipment</h3>
+    <table class="table">
+        
+        <th>Location</th>
+        <th>Delivery Method</th>
+        <th>Shipment Cost</th>
+        <th class="detail">Status</th>
+        <th>Delivery Date</th>
+        <th>Delivery Time</th>
+        <th>Details</th>
+        <th>Edit</th>
+        
+
+        
+        {% for shipment in shipments %}
+
+        <tr>
+            <td>{{shipment.location}}</td>
+            <td>{{shipment.delivery_method}}</td>
+            <td>{{shipment.shipment_cost}}</td>
+            <td>{{shipment.status}}</td>
+            <td>{{shipment.delivery_date}}</td>
+            <td>{{shipment.delivery_time}}</td>
+            
+            
+            <td class="details"><a href="{% url 'shipment_details_view' id=shipment.id %}"> View shipment details</a></td>
+            <td><a href="{%url 'edit_shipment_view' id=shipment.id %}"><button> EDIT</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>

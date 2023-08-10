@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/products_list.css' %}">
+
+</head>
+<body>
+  <h3>Products</h3>
+    <table class="table">
+        
+            <th>Title</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th class="detail">Product Details</th>
+            <th>Edit</th>
+
+        
+        {% for product in products %}
+
+        <tr>
+            <td>{{product.title}}</td>
+            <td>{{product.description}}</td>
+            <td><img class="image" src="{{ product.image.url }}" alt="image"></td>
+            <td>{{product.price}}</td>
+            <td>{{product.stock}}</td>
+            <td class="details"><a href="{% url 'product_details_view' id=product.id %}"> View product details</a></td>
+            <td><a href="{%url 'edit_product_view' id=product.id %}"><button> EDIT</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>

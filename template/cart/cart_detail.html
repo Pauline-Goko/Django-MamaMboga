@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/products_detail.css' %}">
+</head>
+<body>
+    <h3>Cart</h3>
+    <table class="table">
+        
+        <th>Inventory</th>
+        <th>Delivery Method</th>
+        <th>Number Of Products</th>
+        <th class="detail">Products Total</th>
+        <th>Shipping Cost</th>
+        <th>Payment Method</th>
+        <th>Details</th>
+        <th>Edit</th>
+         
+
+        <tr>
+            <td>{{cart.inventory}}</td>
+            <td>{{cart.delivery_method}}</td>
+            <td>{{cart.number_of_products}}</td>
+            <td>{{cart.products_total}}</td>
+            <td>{{cart.shipping_cost}}</td>
+            <td>{{cart.payment_method}}</td>
+           
+        </tr>
+     
+        
+    </table>
+</body>
+</html>
