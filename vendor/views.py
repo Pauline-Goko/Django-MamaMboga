@@ -29,15 +29,4 @@ def vendor_details(request, id):
     return render(request, "vendor/vendor_details.html", {"vendor": vendor})
 
 
-def edit_vendor(request, id):
-    vendor = Vendor.objects.get(id=id)
-    if request.method == "POST":
-        form = VendorViewForm(request.POST, request.FILES)
-        form.is_valid()
-        form.save()
-        return redirect("vendor")
-    
-    else:
-        form = VendorViewForm(instance=vendor)
-        return render(request, "vendor/vendor_edit.html", {"form": form})
     

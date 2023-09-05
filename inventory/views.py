@@ -34,15 +34,16 @@ def product_details(request, id):
 
 
 # editing data
-def edit_product(request, id):
-     product = Product.objects.get(id=id)
-     if request.method == "POST":
-          form = ProductUploadForm(request.POST, instance=product)
-          form.is_valid()
-          form.save()
-          return redirect("product_details_view", id=product.id)
+
+# def edit_product(request, id):
+#      product = Product.objects.get(id=id)
+#      if request.method == "POST":
+#           form = ProductUploadForm(request.POST, instance=product)
+#           form.is_valid()
+#           form.save()
+#           return redirect("product_details_view", id=product.id)
 
 
-     else: 
-          form = ProductUploadForm(instance=product)
-          return render(request, "inventory/edit_product.html", {"form":form})
+#      else: 
+#           form = ProductUploadForm(instance=product)
+#           return render(request, "inventory/edit_product.html", {"form":form})

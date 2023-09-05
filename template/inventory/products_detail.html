@@ -11,12 +11,18 @@
 <body>
 
 <div class="description">
+    <div class="detail">
+    
     <h4>{{products.title}}</h4>
-    <img src="{{ product.image.url }}"/>
+
+    <img src="{{  products.image.url }}" alt="{{product.title}}"/>
     <p>{{products.description}} </p>
-    <span> {{products.price}} </span>
-    <button><a href="{% url 'products_list_view' %}"></a>Add to cart</button>
+    <span>Price:  {{products.price}}</span><a href="/template/inventory/cart.html"></a>
+    <a href="{% url 'cart_list_view' %}"><button>Add to cart</button></a>
     </div>
+
+    </div>
+
 
 </body>
 </html>

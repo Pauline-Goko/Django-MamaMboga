@@ -19,7 +19,7 @@
         <th class="detail">Number of Stars</th>
         <th>Date</th>
         <th>Details</th>
-        <th>Edit</th>
+        
         
 
         
@@ -33,7 +33,7 @@
             <td>{{review.date}}</td>
             
             <td class="details"><a href="{% url 'review_details_view' id=review.id %}"> View payment details</a></td>
-            <td><a href="{%url 'edit_reviews_view' id=review.id %}"><button> EDIT</button></a></td>
+           
         </tr>
         {% endfor %}
     </table>

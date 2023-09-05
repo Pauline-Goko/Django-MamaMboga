@@ -5,6 +5,8 @@
     margin-top: 5%;
 }
 
+
+
 h3{
     color: rgb(26, 230, 43);
     font-size: 3em;
@@ -45,4 +47,40 @@ th{
 .image{
     width: 200px;
     height: 200px;
+}
+
+.detail button{
+    background-color: rgb(55, 212, 68);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 19%;
+}
+
+.detail h4{
+    font-size: 22px;
+    text-align: center;
+    
+}
+
+.detail{
+    
+    width: 600px;
+ 
+}
+
+.detail img{
+    width: 350px;
+    margin-left: 20%;
+}
+
+.detail span{
+    font-weight: bold;
+    margin-left: 10%;
+}
+
+.detail p{
+    margin-left: 2%;
 }

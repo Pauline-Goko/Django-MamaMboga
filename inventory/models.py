@@ -8,7 +8,7 @@ class Product(models.Model):
                                on_delete=models.CASCADE)
     description = models.TextField()
     product_id = models.PositiveBigIntegerField()
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images')
     price = models.DecimalField(max_digits = 6, decimal_places = 2)
     stock = models.PositiveIntegerField()
     

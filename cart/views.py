@@ -37,11 +37,12 @@ def edit_cart(request, id):
         form = CartViewForm(request.POST, instance=cart)
         form.is_valid()
         form.save()
-        return redirect("cart_list-view", id=cart)
+        return redirect("cart_list_view", id=cart)
     
     else:
         form = CartViewForm(instance=cart)
-        return render(request, "cart/edit_cart.html", {"cart": cart}) 
+
+    return render(request, "cart/edit_cart.html", {"cart": cart}) 
 
 
 

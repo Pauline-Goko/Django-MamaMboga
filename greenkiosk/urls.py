@@ -16,16 +16,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("inventory/", include("inventory.urls")),
-    path("cart/", include("cart.url")),
+    path("cart/", include("cart.urls")),
     path("customer/", include("customer.urls")),
     path("notification/", include("notification.urls")),
     path("order/", include("order.urls")),
     path("payment/", include("payment.urls")),
     path("review/", include("review.urls")),
     path("shipment/", include("shipment.urls")),
-    path("vendor/", include("vendor.urls"))
+    path("vendor/", include("vendor.urls")),
+    path("api/", include("api.urls")),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
