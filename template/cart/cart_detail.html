@@ -18,6 +18,7 @@
         <th class="detail">Products Total</th>
         <th>Shipping Cost</th>
         <th>Payment Method</th>
+        <th>Delete</th>
        
         
          
@@ -29,6 +30,7 @@
             <td>{{cart.products_total}}</td>
             <td>{{cart.shipping_cost}}</td>
             <td>{{cart.payment_method}}</td>
+            <td><a href="{ %url 'remove_product_from_cart_view' id=cart.id % }"></a>Delete</td>
            
         </tr>
      

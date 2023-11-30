@@ -7,6 +7,19 @@ from inventory.models import Product
 class Cart(models.Model):
 
     inventory = models.ManyToManyField(Product)
+    # add a function to add product to cart
+    # a function to get the total price in cart
+    def add_product(self, product):
+        self.inventory.add(product)
+        self.save()
+
+    def get_total(self):
+        products = self.inventory
+        total = 0
+        for product in products:
+            total += product.price
+        return total
+            
     delivery_choices = (
         ('Pick-Up Point', 'Pick-Up Point'),
         ('Home Delivery', 'Home Delivery'),
